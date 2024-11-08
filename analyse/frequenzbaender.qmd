@@ -1,0 +1,276 @@
+---
+title: "Vereinheitlichung Frequenzen und deren Benennung"
+subtitle: "Erstellung Schlüsseltabelle"
+author: "Gian-Marco Alt"
+date: "2024-11-08"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+## Ausgangslage
+
+Um Aussagen über die zeitliche Entwicklung der Mobilfunkstrahlung machen zu können, betreibt das AWEL seit 2014 eine Messstation für die Messung hochfrequenter (HF) nichtionisierender Strahlung (NIS) im Zentrum von Wädenswil.<br> Mit dem Standort auf der Dachterrasse an der Stampfenbachstrasse (ab 2017 und einem Standort mitten in der Bahnhofshalle am HB (ab Mitte 2023) sind zwei weitere Standorte als Langzeit Messorte in Betrieb genommen worden.
+
+### Herausforderung
+
+-   Unterschiedliche zeitliche Auflösungen - Messungen alle zwei Minuten, ab 2021 (?) alle 10 Sekunden.
+
+-   Anzahl Frequenzbänder unterschiedlich
+
+-   Verschiedene Formate: *.xlsx und *.csv
+
+-   Neuere Messdaten (swissnis) können zudem direkt via FTP-Server bezogen werden
+
+-   Ab 2021 sind ergänzend auch noch Peak Werte vorhanden
+
+### Lösungsansatz
+
+Die Sektion Strahlung hat in einer Übersichttabelle alle vorhandenen Datenstrukturen aufgeführt und zudem eine Spalte mit einem Schlüsselattribut für die Überführung der unterschiedlichen Quellen in eine einzige Tabelle hinzugefügt.
+
+```{r}
+#| label: load-packages
+#| include: false
+
+library(tidyverse) # a suite of packages for data wrangling, transformation, plotting, ...
+library(here)
+library(readxl)
+
+```
+
+## Aufbereitung
+
+### Daten Standort Dachterrasse Stampfenbachstrasse
+
+```{r}
+#| label: get-csv
+#| echo: false
+#| include: true
+
+## Auf Basis des Excelfiles "Frequenzbänder Langzeitmessungen.xlsx"
+## ein *.csv erstellt -> key_tab
+## Verkehrsleistung Strasse Personen (Mio. Pkm) und Verkehrsleistung Strasse Güter (Mio. tkm)
+
+key_tab <- read_delim(here("data/raw/key_tab.csv"), delim = ";")
+
+# 
+# key_expo_22 <- read_excel("G:/LKS/06_Strahlung/03_Projekte/NIS-Monitoring/Dauermessung Stampfenbach-Dach/OGD/Frequenzbänder Langzeitmessungen.xlsx", sheet = "Key Tab", range = "H2:L60")
+# 
+# key_expo_04 <- read_excel("G:/LKS/06_Strahlung/03_Projekte/NIS-Monitoring/Dauermessung Stampfenbach-Dach/OGD/Frequenzbänder Langzeitmessungen.xlsx", sheet = "Key Tab", range = "N2:R52")
+# 
+# key_expo_06 <- read_excel("G:/LKS/06_Strahlung/03_Projekte/NIS-Monitoring/Dauermessung Stampfenbach-Dach/OGD/Frequenzbänder Langzeitmessungen.xlsx", sheet = "Key Tab", range = "S2:W52")
+# 
+# key_expo_m <- read_excel("G:/LKS/06_Strahlung/03_Projekte/NIS-Monitoring/Dauermessung Stampfenbach-Dach/OGD/Frequenzbänder Langzeitmessungen.xlsx", sheet = "Key Tab", range = "Y2:AC17")
+
+
+
+
+```
+
+```{r}
+#| label: analyse-data
+#| echo: false
+#| include: true
+
+## Herleitung Faktoren 2019 zu jeweiligen Jahr für Berechnung der Verkehrsleistung
+## pro Fahrzeugkategorie und Jahr
+
+# Kategorien LNF/SNF sowie SN_LNF/SZ_SNF werden zu LKW bzw SZ zusammengefasst
+key_qs <- key_tab %>%
+  group_by(key) %>% 
+  summarise(total = n()) %>% 
+  ungroup()
+
+# Berechnung Faktoren für das Referenzjahr 2019
+faktoren <- bfs_mod %>% 
+  filter(Jahr == 2019) %>% 
+  left_join(tab_eco) %>% 
+  mutate(faktor = Verkehrsleistung_2019 / Fahrleistung) %>% 
+  select(Kategorie, faktor)
+
+# Erstellung der anpepassten Input Tabellen für Ecospeed Region
+fakt_mod <- bfs_mod %>% 
+  left_join(faktoren) %>% 
+  mutate(Value = Fahrleistung*faktor) %>% 
+  select(Jahr, Kategorie, Value)
+  
+# Define the manual sequence for the attribute Kategorie
+manual_order <- c("MR","PW","LBUS","RBUS")
+
+tab_personen <- fakt_mod %>%
+  filter(!Kategorie %in% c("LKW", "SZ")) %>% 
+  pivot_wider(id_cols = Kategorie, names_from = Jahr , values_from = Value) %>% 
+  mutate(Kategorie = factor(Kategorie, levels = manual_order)) %>%
+  arrange(Kategorie)
+  
+tab_gueter <- fakt_mod %>%
+  filter(Kategorie %in% c("LKW", "SZ")) %>% 
+  pivot_wider(id_cols = Kategorie, names_from = Jahr , values_from = Value)
+
+# Export der Verkehrs-Sets
+write_delim(tab_personen, here("data/final/umlegung/tab_str_lstg_pv.csv"), delim = ";")
+write_delim(tab_gueter, here("data/final/umlegung/tab_str_lstg_gv.csv"), delim = ";")
+
+```
+
+### Ergänzungen Treibstoffmix 1990 bis 2022
+
+```{r}
+#| label: calc-trbst
+#| echo: false
+#| include: true
+
+# Define a custom function to convert percentage strings to numeric
+percent_to_numeric <- function(x) {
+  as.numeric(sub("%", "", x))
+}
+
+## Datengrundlagen aus HBEFA Version 4.2
+## Anteil Fahrleistung pro Jahr, differenenziert nach Fahrzeugkategorie und Treibstoff
+tab_trbst <- read_delim(here("data/roh/umlegung/fahrleistung_trbst_fzkat_hbefa_42.csv"),
+                                delim = ";",
+                        col_types = cols_only(
+                          Kategorie = col_character(),   # Specify the columns you want to read
+                          Year = col_number(),
+                          Segment = col_character(),
+                          `Share(vehkm)` = col_character() # Example: column 'percentage' to read as character
+  )
+) %>%
+  mutate(
+    Anteil = percent_to_numeric(`Share(vehkm)`)
+  ) %>%
+  select(-`Share(vehkm)`) %>% 
+  filter(Year <= 2022)
+
+trbst_mod <- tab_trbst %>% 
+  filter(Kategorie %in% c("PW")) %>% 
+  mutate(trbst = case_when(
+    Segment %in% c("PKW Benzin", "PKW FFV", "PKW PHEV Benzin") ~ "Benzin",
+    Segment %in% c("PKW Diesel", "PKW PHEV Diesel") ~ "Diesel",
+    Segment %in% c("PKW BEV","PKW FuelCell") ~ "Strom",
+    Segment %in% c("PKW CNG/Benzin") ~ "Erdgas",
+    Segment %in% c("PKW LPG/Benzin") ~ "Flüssiggas",
+    TRUE ~ Segment
+  ))
+
+trbst_mod1 <- trbst_mod %>%
+  group_by(Year,trbst) %>% 
+  summarise(Ant_agg = sum(Anteil))
+
+trbst_wider <- trbst_mod1 %>%
+  pivot_wider(id_cols = trbst, names_from = Year, values_from = Ant_agg)
+trbst_wider[is.na(trbst_wider)] <- 0
+
+## Datengrundlagen aus Ecospeed Region
+## Treibstoffmix pro Jahr, differenenziert nach Fahrzeugkategorie und Treibstoff
+tab_eco_trbst <- read_delim(here("data/roh/umlegung/treibstoffmix_strasse_1990_2022_region.csv"),
+                                delim = ";") %>% 
+  filter(Fahrzeugkategorien == "Personenwagen" & Energieträger %in% c("Biogase","Pflanzenöl","Biodiesel")) %>% 
+  select(-Fahrzeugkategorien) %>% 
+  rename(trbst = Energieträger) %>% 
+  mutate_at(vars(`1990`:`2009`), ~ ifelse(trbst == "Biodiesel", 0.08, .)) %>% 
+  mutate_at(vars(`1990`:`2007`), ~ ifelse(trbst == "Biogase", 0.00, .))
+
+## Combine both tabs
+tab_trb <- bind_rows(trbst_wider,tab_eco_trbst)
+
+# Step 2: Compute the difference between Diesel and Biodiesel rows
+# Filter rows for Diesel and Biodiesel
+diesel_data <- tab_trb %>% filter(trbst == "Diesel")
+biodiesel_data <- tab_trb %>% filter(trbst == "Biodiesel")
+erdgas_data <- tab_trb %>% filter(trbst == "Erdgas")
+biogas_data <- tab_trb %>% filter(trbst == "Biogase")
+
+tab_trb1 <- tab_trb %>% 
+  filter(!trbst %in% c("Diesel", "Erdgas"))
+
+# Ensure that both data frames are of the same structure and can be aligned by row
+# Here we assume they have the same rows and columns
+# Calculate the difference
+dif_diesel <- diesel_data %>%
+  select(-trbst) %>%  # Exclude non-numeric columns if needed
+  mutate(across(everything(), ~ . - biodiesel_data %>% select(cur_column()) %>% unlist())) %>%
+  mutate(trbst = "Diesel")
+
+dif_gas <- erdgas_data %>%
+  select(-trbst) %>%  # Exclude non-numeric columns if needed
+  mutate(across(everything(), ~ . - biogas_data %>% select(cur_column()) %>% unlist())) %>%
+  mutate(trbst = "Erdgas")
+
+# Step 3: Append the difference row to the original data frame
+tab_trb_mod <- bind_rows(tab_trb1, dif_diesel, dif_gas)
+
+# Define the manual sequence for the attribute Kategorie
+man_order <- c("Strom","Benzin","Diesel","Erdgas","Biogase","Flüssiggas","Pflanzenöl","Biodiesel")
+
+tab_trb_mod <- tab_trb_mod %>%
+  mutate(trbst = factor(trbst, levels = man_order)) %>%
+  arrange(trbst)
+
+total_per_column <- tab_trb_mod %>%
+  select(-trbst) %>% 
+  summarise_all(sum, na.rm = TRUE)
+
+# Export Treibstoff-Mix Personenwagen 
+# Input für Tabelle "Treibstoffmix Strasse Personen (%)" in Ecospeed Region
+write_delim(tab_trb_mod, here("data/final/umlegung/tab_trbst_str_pw.csv"), delim = ";")
+
+```
+
+### Ergänzungen Spezifischer Verbrauch 1990 bis 2018
+
+```{r}
+#| label: get-csv-verbrauch
+#| echo: false
+#| include: true
+
+## Datengrundlagen aus HBEFA Version 4.2
+## Treibstoffverbrauch in MJ pro Jahr, differenziert nach Fahrzeugkategorie inkl. Subsegment und Treibstoff
+## Subsegment wird für die Differenzierung Sattelzug vs. Lastkraftwagen benötigt
+
+tab_efa_seg <- read_delim(here("data/roh/umlegung/efa_mkr_fzkat_trbst_hbefa_42_segment.csv"),
+                                delim = ";", 
+                      col_types = cols_only(
+                          VehCat = col_character(),   # Specify the columns you want to read
+                          Year = col_number(),
+                          Subsegment = col_character(),
+                          Technology = col_character(),
+                          `%OfSubsegment` = col_number(),
+                          EFA = col_number() # Example: column 'percentage' to read as character
+  )
+) %>%
+  mutate(kategorie = if_else(str_starts(Subsegment, "LZ/SZ"), "SZ", 
+                           if_else(VehCat %in% c("LNF", "SNF"), "LKW", 
+                                   if_else(VehCat %in% c("PKW"), "PW",
+                                           if_else(VehCat %in% c("KR/MR"), "MR",
+                                   toupper(VehCat)))))) %>% 
+    mutate(trbst = case_when(
+    Technology %in% c("B (4T)", "B (2T)", "flex-fuel E85", "Plug-in Hybrid petrol/elektrisch") ~ "Benzin",
+    Technology %in% c("D", "PKW PHEV Diesel", "Plug-in Hybrid diesel/elektrisch") ~ "Diesel",
+    Technology %in% c("electricity","Brennstoffzelle") ~ "Strom",
+    Technology %in% c("bifuel CNG/petrol","bifuel CNG/petrol","CNG", "LNG") ~ "Erdgas",
+    Technology %in% c("bifuel LPG/B") ~ "Flüssiggas",
+    TRUE ~ Technology)) %>% 
+  rename(anteil = `%OfSubsegment`)
+
+## Datengrundlagen aus Ecospeed Region
+## Verkehrsleistung Strasse Personen (Mio. Pkm) und Verkehrsleistung Strasse Güter (Mio. tkm)
+tab_eco_verbrauch <- read_delim(here("data/roh/umlegung/verbrauch_strasse_1990_2020_region.csv"),
+                                delim = ";") %>% 
+  pivot_longer(cols = !c(Fahrzeugkategorien, Energieträger),
+               names_to = "year",
+               values_to = "value") %>% 
+  rename(kategorie = Fahrzeugkategorien, trbst = Energieträger) %>% 
+  filter(year == 2019 & !kategorie %in% c("Strassenbahn")) %>% 
+  mutate(kategorie = case_when(
+    kategorie %in% c("Motorräder") ~ "MR",
+    kategorie %in% c("Personenwagen") ~ "PW",
+    kategorie %in% c("Linien-/Omnibusse") ~ "LBUS",
+    kategorie %in% c("Reisebusse") ~ "RBUS",
+    kategorie %in% c("Lastkraftwagen") ~ "LKW",
+    kategorie %in% c("Sattelzugmaschinen") ~ "SZ",
+    TRUE ~ kategorie
+  ))
+
+```

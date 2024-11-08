@@ -1,0 +1,244 @@
+﻿name;key;freq;freq_range;source
+FM Radio;FM Radio;97.75 MHz (RMS);35 MHz;SwissnNis
+DAB/DAB+;DAB/DAB+ ;202 MHz (RMS);75 MHz;SwissnNis
+Polycom / TETRAPOL;Polycom/TETRA;385 MHz (RMS);35 MHz;SwissnNis
+TETRAPOL, amateur, ISM 433;TETRA, amateur, ISM 433;422.5 MHz (RMS);35 MHz;SwissnNis
+PMR/PAMR;PMR/PAMR;452.5 MHz (RMS);35 MHz;SwissnNis
+Broadcasting (1);Broadcasting (1);507.5 MHz (RMS);75 MHz;SwissnNis
+Broadcasting (2);Broadcasting (2);583.5 MHz (RMS);75 MHz;SwissnNis
+Broadcasting (3);Broadcasting (3);659.5 MHz (RMS);75 MHz;SwissnNis
+Mobile 700 UL;Mobile 700 UL;718 MHz (RMS);35 MHz;SwissnNis
+Mobile 700 TDD;Mobile 700 TDD;748 MHz (RMS);35 MHz;SwissnNis
+Mobile 700 DL;Mobile 700 DL;770.5 MHz (RMS);35 MHz;SwissnNis
+Mobile 800 DL;Mobile 800 DL;808.5 MHz (RMS);35 MHz;SwissnNis
+Mobile 800 UL;Mobile 800 UL;847 MHz (RMS);35 MHz;SwissnNis
+Mobile 900 UL;Mobile 900 UL;897.5 MHz (RMS);35 MHz;SwissnNis
+Mobile 900 DL;Mobile 900 DL;942.5 MHz (RMS);35 MHz;SwissnNis
+Mobile 1400 SDL;Mobile 1400 SDL;1479.5 MHz (RMS);75 MHz;SwissnNis
+Mobile 1800 UL;Mobile 1800 UL;1747.5 MHz (RMS);75 MHz;SwissnNis
+Mobile 1800 DL;Mobile 1800 DL;1842.5 MHz (RMS);75 MHz;SwissnNis
+DECT;DECT;1897.5 MHz (RMS);35 MHz;SwissnNis
+Mobile 2100 UL;Mobile 2100 UL;1957 MHz (RMS);75 MHz;SwissnNis
+Mobile 2100 DL;Mobile 2100 DL;2145 MHz (RMS);75 MHz;SwissnNis
+ISM 2.4 GHz;ISM 2.4 GHz;2438 MHz (RMS);100 MHz;SwissnNis
+Mobile 2600 UL;Mobile 2600 UL;2535 MHz (RMS);75 MHz;SwissnNis
+Mobile 2600 TDD;Mobile 2600 TDD;2592.5 MHz (RMS);35 MHz;SwissnNis
+Mobile 2600 DL;Mobile 2600 DL;2657 MHz (RMS);75 MHz;SwissnNis
+Mobile 3500 (1);Mobile 3500 (1);3475 MHz (RMS);100 MHz;SwissnNis
+Mobile 3500 (2);Mobile 3500 (2);3605 MHz (RMS);100 MHz;SwissnNis
+Mobile 3500 (3);Mobile 3500 (3);3735 MHz (RMS);100 MHz;SwissnNis
+WiFi 5 GHz (1);WiFi 5 GHz (1);5200 MHz (RMS);100 MHz;SwissnNis
+WiFi 5 GHz (2);WiFi 5 GHz (2);5325 MHz (RMS);100 MHz;SwissnNis
+WiFi 5 GHz (3);WiFi 5 GHz (3);5450 MHz (RMS);100 MHz;SwissnNis
+WiFi 5 GHz (4);WiFi 5 GHz (4);5575 MHz (RMS);100 MHz;SwissnNis
+WiFi 5 GHz (5);WiFi 5 GHz (5);5700 MHz (RMS);100 MHz;SwissnNis
+WiFi / SRD 5.8 GHz (1);WiFi / SRD 5.8 GHz (1);5825 MHz (RMS);100 MHz;SwissnNis
+WiFi / SRD 5.8 GHz (2);WiFi / SRD 5.8 GHz (2);5950 MHz (RMS);100 MHz;SwissnNis
+FM Radio;FM Radio peak;97.75 MHz (PEAK);35 MHz;SwissnNis
+DAB/DAB+;DAB/DAB+ peak;202 MHz (PEAK);75 MHz;SwissnNis
+Polycom / TETRAPOL;Polycom/TETRA peak;385 MHz (PEAK);35 MHz;SwissnNis
+TETRAPOL, amateur, ISM 433;TETRA, amateur, ISM 433;422.5 MHz (PEAK);35 MHz;SwissnNis
+PMR/PAMR;PMR/PAMR peak;452.5 MHz (PEAK);35 MHz;SwissnNis
+Broadcasting (1);Broadcasting (1) peak;507.5 MHz (PEAK);75 MHz;SwissnNis
+Broadcasting (2);Broadcasting (2) peak;583.5 MHz (PEAK);75 MHz;SwissnNis
+Broadcasting (3);Broadcasting (3) peak;659.5 MHz (PEAK);75 MHz;SwissnNis
+Mobile 700 UL;Mobile 700 UL peak;718 MHz (PEAK);35 MHz;SwissnNis
+Mobile 700 TDD;Mobile 700 TDD peak;748 MHz (PEAK);35 MHz;SwissnNis
+Mobile 700 DL;Mobile 700 DL peak;770.5 MHz (PEAK);35 MHz;SwissnNis
+Mobile 800 DL;Mobile 800 DL peak;808.5 MHz (PEAK);35 MHz;SwissnNis
+Mobile 800 UL;Mobile 800 UL peak;847 MHz (PEAK);35 MHz;SwissnNis
+Mobile 900 UL;Mobile 900 UL peak;897.5 MHz (PEAK);35 MHz;SwissnNis
+Mobile 900 DL;Mobile 900 DL peak;942.5 MHz (PEAK);35 MHz;SwissnNis
+Mobile 1400 SDL;Mobile 1400 SDL peak;1479.5 MHz (PEAK);75 MHz;SwissnNis
+Mobile 1800 UL;Mobile 1800 UL peak;1747.5 MHz (PEAK);75 MHz;SwissnNis
+Mobile 1800 DL;Mobile 1800 DL peak;1842.5 MHz (PEAK);75 MHz;SwissnNis
+DECT;DECT peak;1897.5 MHz (PEAK);35 MHz;SwissnNis
+Mobile 2100 UL;Mobile 2100 UL peak;1957 MHz (PEAK);75 MHz;SwissnNis
+Mobile 2100 DL;Mobile 2100 DL peak;2145 MHz (PEAK);75 MHz;SwissnNis
+ISM 2.4 GHz;ISM 2.4 GHz peak;2438 MHz (PEAK);100 MHz;SwissnNis
+Mobile 2600 UL;Mobile 2600 UL peak;2535 MHz (PEAK);75 MHz;SwissnNis
+Mobile 2600 TDD;Mobile 2600 TDD peak;2592.5 MHz (PEAK);35 MHz;SwissnNis
+Mobile 2600 DL;Mobile 2600 DL peak;2657 MHz (PEAK);75 MHz;SwissnNis
+Mobile 3500 (1);Mobile 3500 (1) peak;3475 MHz (PEAK);100 MHz;SwissnNis
+Mobile 3500 (2);Mobile 3500 (2) peak;3605 MHz (PEAK);100 MHz;SwissnNis
+Mobile 3500 (3);Mobile 3500 (3) peak;3735 MHz (PEAK);100 MHz;SwissnNis
+WiFi 5 GHz (1);WiFi 5 GHz (1) peak;5200 MHz (PEAK);100 MHz;SwissnNis
+WiFi 5 GHz (2);WiFi 5 GHz (2) peak;5325 MHz (PEAK);100 MHz;SwissnNis
+WiFi 5 GHz (3);WiFi 5 GHz (3) peak;5450 MHz (PEAK);100 MHz;SwissnNis
+WiFi 5 GHz (4);WiFi 5 GHz (4) peak;5575 MHz (PEAK);100 MHz;SwissnNis
+WiFi 5 GHz (5);WiFi 5 GHz (5) peak;5700 MHz (PEAK);100 MHz;SwissnNis
+WiFi / SRD 5.8 GHz (1);WiFi / SRD 5.8 GHz (1) peak;5825 MHz (PEAK);100 MHz;SwissnNis
+WiFi / SRD 5.8 GHz (2);WiFi / SRD 5.8 GHz (2) peak;5950 MHz (PEAK);100 MHz;SwissnNis
+UKW;FM Radio;97.75 MHz (RMS);35 MHz;ExpoM RF4 ab 2022
+DAB+;DAB/DAB+ ;202 MHz (RMS);75 MHz;ExpoM RF4 ab 2022
+TETRA;Polycom/TETRA;390 MHz (RMS);35 MHz;ExpoM RF4 ab 2022
+DVBa;;539 MHz (RMS);100 MHz;ExpoM RF4 ab 2022
+DVBb;;644 MHz (RMS);100 MHz;ExpoM RF4 ab 2022
+700ul;Mobile 700 UL;718 MHz (RMS);35 MHz;ExpoM RF4 ab 2022
+700dl;Mobile 700 DL;765 MHz (RMS);35 MHz;ExpoM RF4 ab 2022
+800dl;Mobile 800 DL;806 MHz (RMS);35 MHz;ExpoM RF4 ab 2022
+800ul;Mobile 800 UL;847 MHz (RMS);35 MHz;ExpoM RF4 ab 2022
+900ul;Mobile900 UL;897.5 MHz (RMS);35 MHz;ExpoM RF4 ab 2022
+900dl;Mobile 900 DL;942.5 MHz (RMS);35 MHz;ExpoM RF4 ab 2022
+1400sdl;Mobile 1400 SDL;1480 MHz (RMS);75 MHz;ExpoM RF4 ab 2022
+1800ul;Mobile 1800 UL;1747.5 MHz (RMS);75 MHz;ExpoM RF4 ab 2022
+1800dl;Mobile 1800 DL;1842.5 MHz (RMS);75 MHz;ExpoM RF4 ab 2022
+DECT;;1890 MHz (RMS);35 MHz;ExpoM RF4 ab 2022
+2100ul;Mobile 2100 UL;1950 MHz (RMS);75 MHz;ExpoM RF4 ab 2022
+2100dl;Mobile 2100 DL;2140 MHz (RMS);75 MHz;ExpoM RF4 ab 2022
+WLAN24;ISM 2.4 GHz;2442.5 MHz (RMS);100 MHz;ExpoM RF4 ab 2022
+2600ul;Mobile 2600 UL;2535 MHz (RMS);75 MHz;ExpoM RF4 ab 2022
+2600dl;Mobile 2600 DL;2655 MHz (RMS);75 MHz;ExpoM RF4 ab 2022
+3500a;Mobile 3500 (1);3550 MHz (RMS);100 MHz;ExpoM RF4 ab 2022
+3500b;Mobile 3500 (2);3650 MHz (RMS);100 MHz;ExpoM RF4 ab 2022
+3500c;Mobile 3500 (3);3750 MHz (RMS);100 MHz;ExpoM RF4 ab 2022
+WLAN5a;;5200 MHz (RMS);100 MHz;ExpoM RF4 ab 2022
+WLAN5b;;5300 MHz (RMS);100 MHz;ExpoM RF4 ab 2022
+WLAN5c;;5550 MHz (RMS);100 MHz;ExpoM RF4 ab 2022
+WLAN5d;;5650 MHz (RMS);100 MHz;ExpoM RF4 ab 2022
+ISM5a;;5762.5 MHz (RMS);75 MHz;ExpoM RF4 ab 2022
+ISM5b;;5837.5 MHz (RMS);75 MHz;ExpoM RF4 ab 2022
+UKW;FM Radio peak;97.75 MHz (PEAK);35 MHz;ExpoM RF4 ab 2022
+DAB+;DAB/DAB+ peak;202 MHz (PEAK);75 MHz;ExpoM RF4 ab 2022
+TETRA;Polycom/TETRA peak;390 MHz (PEAK);35 MHz;ExpoM RF4 ab 2022
+DVBa;;539 MHz (PEAK);100 MHz;ExpoM RF4 ab 2022
+DVBb;;644 MHz (PEAK);100 MHz;ExpoM RF4 ab 2022
+700ul;Mobile 700 UL peak;718 MHz (PEAK);35 MHz;ExpoM RF4 ab 2022
+700dl;Mobile 700 DL peak;765 MHz (PEAK);35 MHz;ExpoM RF4 ab 2022
+800dl;Mobile 800 DL peak;806 MHz (PEAK);35 MHz;ExpoM RF4 ab 2022
+800ul;Mobile 800 UL peak;847 MHz (PEAK);35 MHz;ExpoM RF4 ab 2022
+900ul;Mobile 900 UL peak;897.5 MHz (PEAK);35 MHz;ExpoM RF4 ab 2022
+900dl;Mobile 900 DL peak;942.5 MHz (PEAK);35 MHz;ExpoM RF4 ab 2022
+1400sdl;Mobile 1400 SDL peak;1480 MHz (PEAK);75 MHz;ExpoM RF4 ab 2022
+1800ul;Mobile 1800 UL peak;1747.5 MHz (PEAK);75 MHz;ExpoM RF4 ab 2022
+1800dl;Mobile 1800 DL peak;1842.5 MHz (PEAK);75 MHz;ExpoM RF4 ab 2022
+DECT;;1890 MHz (PEAK);35 MHz;ExpoM RF4 ab 2022
+2100ul;Mobile 2100 UL peak;1950 MHz (PEAK);75 MHz;ExpoM RF4 ab 2022
+2100dl;Mobile 2100 DL peak;2140 MHz (PEAK);75 MHz;ExpoM RF4 ab 2022
+WLAN24;ISM 2.4 GHz peak;2442.5 MHz (PEAK);100 MHz;ExpoM RF4 ab 2022
+2600ul;Mobile 2600 UL peak;2535 MHz (PEAK);75 MHz;ExpoM RF4 ab 2022
+2600dl;Mobile 2600 DL peak;2655 MHz (PEAK);75 MHz;ExpoM RF4 ab 2022
+3500a;Mobile 3500 (1) peak;3550 MHz (PEAK);100 MHz;ExpoM RF4 ab 2022
+3500b;Mobile 3500 (2) peak;3650 MHz (PEAK);100 MHz;ExpoM RF4 ab 2022
+3500c;Mobile 3500 (3) peak;3750 MHz (PEAK);100 MHz;ExpoM RF4 ab 2022
+WLAN5a;;5200 MHz (PEAK);100 MHz;ExpoM RF4 ab 2022
+WLAN5b;;5300 MHz (PEAK);100 MHz;ExpoM RF4 ab 2022
+WLAN5c;;5550 MHz (PEAK);100 MHz;ExpoM RF4 ab 2022
+WLAN5d;;5650 MHz (PEAK);100 MHz;ExpoM RF4 ab 2022
+ISM5a;;5762.5 MHz (PEAK);75 MHz;ExpoM RF4 ab 2022
+ISM5b;;5837.5 MHz (PEAK);75 MHz;ExpoM RF4 ab 2022
+-;FM Radio;97.75 MHz (RMS);35 MHz;20004 20005
+-;DAB/DAB+ ;202 MHz (RMS);75 MHz;20004 20005
+-;Polycom/TETRA;390 MHz (RMS);35 MHz;20004 20005
+-;;539 MHz (RMS);100 MHz;20004 20005
+-;;654 MHz (RMS);75 MHz;20004 20005
+-;Mobile 700 UL;718 MHz (RMS);35 MHz;20004 20005
+-;Mobile 700 DL;765 MHz (RMS);35 MHz;20004 20005
+-;Mobile 800 DL;806 MHz (RMS);35 MHz;20004 20005
+-;Mobile 800 UL;847 MHz (RMS);35 MHz;20004 20005
+-;Mobile900 UL;897.5 MHz (RMS);35 MHz;20004 20005
+-;Mobile 900 DL;942.5 MHz (RMS);35 MHz;20004 20005
+-;Mobile 1400 SDL;1480 MHz (RMS);75 MHz;20004 20005
+-;Mobile 1800 UL;1747.5 MHz (RMS);75 MHz;20004 20005
+-;Mobile 1800 DL;1842.5 MHz (RMS);75 MHz;20004 20005
+-;;1890 MHz (RMS);35 MHz;20004 20005
+-;Mobile 2100 UL;1950 MHz (RMS);75 MHz;20004 20005
+-;Mobile 2100 DL;2140 MHz (RMS);75 MHz;20004 20005
+-;ISM 2.4 GHz;2442.5 MHz (RMS);100 MHz;20004 20005
+-;Mobile 2600 UL;2535 MHz (RMS);75 MHz;20004 20005
+-;Mobile 2600 DL;2655 MHz (RMS);75 MHz;20004 20005
+-;Mobile 3500 (1);3475 MHz (RMS);100 MHz;20004 20005
+-;Mobile 3500 (2);3605 MHz (RMS);100 MHz;20004 20005
+-;Mobile 3500 (3);3735 MHz (RMS);100 MHz;20004 20005
+-;;5200 MHz (RMS);100 MHz;20004 20005
+-;;5300 MHz (RMS);100 MHz;20004 20005
+-;FM Radio peak;97.75 MHz (PEAK);35 MHz;20004 20005
+-;DAB/DAB+ peak;202 MHz (PEAK);75 MHz;20004 20005
+-;Polycom/TETRA peak;390 MHz (PEAK);35 MHz;20004 20005
+-;;539 MHz (PEAK);100 MHz;20004 20005
+-;;654 MHz (PEAK);75 MHz;20004 20005
+-;Mobile 700 UL peak;718 MHz (PEAK);35 MHz;20004 20005
+-;Mobile 700 DL peak;765 MHz (PEAK);35 MHz;20004 20005
+-;Mobile 800 DL peak;806 MHz (PEAK);35 MHz;20004 20005
+-;Mobile 800 UL peak;847 MHz (PEAK);35 MHz;20004 20005
+-;Mobile 900 UL peak;897.5 MHz (PEAK);35 MHz;20004 20005
+-;Mobile 900 DL peak;942.5 MHz (PEAK);35 MHz;20004 20005
+-;Mobile 1400 SDL peak;1480 MHz (PEAK);75 MHz;20004 20005
+-;Mobile 1800 UL peak;1747.5 MHz (PEAK);75 MHz;20004 20005
+-;Mobile 1800 DL peak;1842.5 MHz (PEAK);75 MHz;20004 20005
+-;;1890 MHz (PEAK);35 MHz;20004 20005
+-;Mobile 2100 UL peak;1950 MHz (PEAK);75 MHz;20004 20005
+-;Mobile 2100 DL peak;2140 MHz (PEAK);75 MHz;20004 20005
+-;ISM 2.4 GHz peak;2442.5 MHz (PEAK);100 MHz;20004 20005
+-;Mobile 2600 UL peak;2535 MHz (PEAK);75 MHz;20004 20005
+-;Mobile 2600 DL peak;2655 MHz (PEAK);75 MHz;20004 20005
+-;Mobile 3500 (1) peak;3475 MHz (PEAK);100 MHz;20004 20005
+-;Mobile 3500 (2) peak;3605 MHz (PEAK);100 MHz;20004 20005
+-;Mobile 3500 (3) peak;3735 MHz (PEAK);100 MHz;20004 20005
+-;;5200 MHz (PEAK);100 MHz;20004 20005
+-;;5300 MHz (PEAK);100 MHz;20004 20005
+-;FM Radio;97.75 MHz (RMS);35 MHz;20006
+-;DAB/DAB+ ;202 MHz (RMS);75 MHz;20006
+-;Polycom/TETRA;387 MHz (RMS);35 MHz;20006
+-;;420 MHz (RMS);100 MHz;20006
+-;;472 MHz (RMS);100 MHz;20006
+-;Mobile 700 UL;718 MHz (RMS);35 MHz;20006
+-;Mobile 700 DL;765 MHz (RMS);35 MHz;20006
+-;Mobile 800 UL;847 MHz (RMS);35 MHz;20006
+-;Mobile 800 DL;806 MHz (RMS);35 MHz;20006
+-;Mobile900 UL;897.5 MHz (RMS);35 MHz;20006
+-;Mobile 900 DL;942.5 MHz (RMS);35 MHz;20006
+-;Mobile 1400 SDL;1480 MHz (RMS);75 MHz;20006
+-;Mobile 1800 UL;1747.5 MHz (RMS);75 MHz;20006
+-;Mobile 1800 DL;1842.5 MHz (RMS);75 MHz;20006
+-;;1890 MHz (RMS);35 MHz;20006
+-;Mobile 2100 UL;1950 MHz (RMS);75 MHz;20006
+-;Mobile 2100 DL;2140 MHz (RMS);75 MHz;20006
+-;ISM 2.4 GHz;2442.5 MHz (RMS);100 MHz;20006
+-;Mobile 2600 UL;2535 MHz (RMS);75 MHz;20006
+-;Mobile 2600 DL;2655 MHz (RMS);75 MHz;20006
+-;Mobile 3500 (1);3474 MHz (RMS);100 MHz;20006
+-;Mobile 3500 (2);3574 MHz (RMS);100 MHz;20006
+-;Mobile 3500 (3);3674 MHz (RMS);100 MHz;20006
+-;;5200 MHz (RMS);100 MHz;20006
+-;;5300 MHz (RMS);100 MHz;20006
+-;FM Radio peak;97.75 MHz (PEAK);35 MHz;20006
+-;DAB/DAB+ peak;202 MHz (PEAK);75 MHz;20006
+-;;387 MHz (PEAK);35 MHz;20006
+-;;420 MHz (PEAK);100 MHz;20006
+-;;472 MHz (PEAK);100 MHz;20006
+-;Mobile 700 UL peak;718 MHz (PEAK);35 MHz;20006
+-;Mobile 700 DL peak;765 MHz (PEAK);35 MHz;20006
+-;Mobile 800 UL peak;847 MHz (PEAK);35 MHz;20006
+-;Mobile 800 DL peak;806 MHz (PEAK);35 MHz;20006
+-;Mobile900 UL peak;897.5 MHz (PEAK);35 MHz;20006
+-;Mobile 900 DL peak;942.5 MHz (PEAK);35 MHz;20006
+-;Mobile 1400 SDL peak;1480 MHz (PEAK);75 MHz;20006
+-;Mobile 1800 UL peak;1747.5 MHz (PEAK);75 MHz;20006
+-;Mobile 1800 DL peak;1842.5 MHz (PEAK);75 MHz;20006
+-;;1890 MHz (PEAK);35 MHz;20006
+-;Mobile 2100 UL peak;1950 MHz (PEAK);75 MHz;20006
+-;Mobile 2100 DL peak;2140 MHz (PEAK);75 MHz;20006
+-;ISM 2.4 GHz peak;2442.5 MHz (PEAK);100 MHz;20006
+-;Mobile 2600 UL peak;2535 MHz (PEAK);75 MHz;20006
+-;Mobile 2600 DL peak;2655 MHz (PEAK);75 MHz;20006
+-;Mobile 3500 (1) peak;3474 MHz (PEAK);100 MHz;20006
+-;Mobile 3500 (2) peak;3574 MHz (PEAK);100 MHz;20006
+-;Mobile 3500 (3) peak;3674 MHz (PEAK);100 MHz;20006
+;;5200 MHz (PEAK);100 MHz;20006
+;;5300 MHz (PEAK);100 MHz;20006
+FM Radio;FM Radio;;;ExpoM RF
+TV;;;;ExpoM RF
+Mobile 800 MHz Downlink;Mobile 800 DL;;;ExpoM RF
+Mobile 800 MHz Uplink;Mobile 800 UL;;;ExpoM RF
+Mobile 900 MHz Uplink;Mobile 900 UL;;;ExpoM RF
+Mobile 900 MHz Downlink;Mobile 900 DL;;;ExpoM RF
+Mobile 1.8 GHz Uplink;Mobile 1800 UL;;;ExpoM RF
+Mobile 1.8 GHz Downlink;Mobile 1800 DL;;;ExpoM RF
+DECT;;;;ExpoM RF
+Mobile 2.1 GHz Uplink;Mobile 2100 UL;;;ExpoM RF
+Mobile 2.1 GHz Downlink;Mobile 2100 DL;;;ExpoM RF
+ISM 2.4 GHz;ISM 2.4 GHz;;;ExpoM RF
+Mobile 2.6 GHz Uplink;Mobile 2600 UL;;;ExpoM RF
+Mobile 2.6 GHz Downlink;Mobile 2600 DL;;;ExpoM RF
+Mobile 3.5 GHz;;;;ExpoM RF
